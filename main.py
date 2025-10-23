@@ -1,4 +1,5 @@
 from Class.Artist import Artist
+from Class.Track import Track
 from Class.User import User
 
 # создаём артиста и треки
@@ -15,3 +16,4 @@ playlist.add_track(track2)
 playlist.show_tracks()
 
 user.show_playlists()
+

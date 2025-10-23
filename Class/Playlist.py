@@ -1,7 +1,7 @@
 class Playlist:
-    def __init__(self, playlist_id: int, name: str, username):
+    def __init__(self, playlist_id: int, title: str, username):
         self.playlist_id = playlist_id
-        self.name = name
+        self.title = title
         self.username = username
         self.tracks = []
 
@@ -18,11 +18,11 @@ class Playlist:
             print('Такого трека нет в плейлисте')
 
     def show_tracks(self):
-        print(f'Плейлист: {self.name}')
+        print(f'Плейлист: {self.title}')
         if not self.tracks:
             print("  (пока пуст)")
         for i, track in enumerate(self.tracks, 1):
             print(f"  {i}. {track}")
 
     def __str__(self):
-        return f'Плейлист: {self.name} (треков: {len(self.tracks)})'
+        return f'Плейлист: {self.title} (треков: {len(self.tracks)})'
