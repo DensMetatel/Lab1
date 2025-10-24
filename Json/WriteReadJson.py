@@ -91,4 +91,3 @@ def load_from_json(filename: str = "Json/information_artist.json"):
 
     print(f"Данные загружены из '{filename}'")
     return artists
-

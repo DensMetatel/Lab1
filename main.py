@@ -19,22 +19,27 @@ def main():
 
         track1 = artist1.create_track(1, 'Аминь', 'Rock', 242, 2017)
         track2 = artist1.create_track(2, 'Что ж ты натворила', 'Rock', 215, 2017)
+        track3 = artist1.create_track(3, 'Снега', 'Rock', 245, 2017)
 
         album1.add_track(track1)
         album1.add_track(track2)
+        album1.add_track(track3)
+
         album1.show_tracks()
 
+        artist2 = Artist(3, 'Любэ')
+        track3 = artist2.create_track(1, 'Солдат', 'Русская эстрада', 306, 2012)
+
         user1 = User(1, 'Александр')
-        playlist1 = user1.create_playlist(1, 'Песни Лепса')
+        playlist1 = user1.create_playlist(1, 'Песни 3-x исполнителей')
 
         playlist1.add_track(track1)
-        playlist1.add_track(track2)
+        playlist1.add_track(track3)
+        playlist1.add_track(artists[0].tracks[0])
 
         user1.show_playlists()
         playlist1.show_tracks()
 
-        artist2 = Artist(3, 'Любэ')
-        artist2.create_track(1, 'Солдат', 'Русская эстрада',306,2012)
         artists.append(artist1)
         artists.append(artist2)
 

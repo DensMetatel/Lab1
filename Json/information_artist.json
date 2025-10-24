@@ -49,6 +49,13 @@
                         "genre": "Rock",
                         "duration": 215,
                         "year": 2017
+                    },
+                    {
+                        "track_id": 3,
+                        "title": "Снега",
+                        "genre": "Rock",
+                        "duration": 245,
+                        "year": 2017
                     }
                 ]
             }
