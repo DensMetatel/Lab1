@@ -1,25 +1,72 @@
-{
-    "artist_id": 1,
-    "name": "Григорий Лепс",
-    "albums": [
-        {
-            "album_id": 1,
-            "title": "Ты чего такой серьёзный",
-            "year": 2017,
-            "tracks": [
-                {
-                    "track_id": 1,
-                    "title": "Аминь",
-                    "genre": "Rock",
-                    "duration": 242
-                },
-                {
-                    "track_id": 2,
-                    "title": "Что ж ты натворила",
-                    "genre": "Rock",
-                    "duration": 215
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "artist_id": 1,
+        "name": "Linkin Park",
+        "albums": [
+            {
+                "album_id": 0,
+                "title": "Meteora",
+                "year": 2003,
+                "tracks": [
+                    {
+                        "track_id": 1,
+                        "title": "Numb",
+                        "genre": "Rock",
+                        "duration": 187,
+                        "year": 2003
+                    },
+                    {
+                        "track_id": 2,
+                        "title": "Faint",
+                        "genre": "Rock",
+                        "duration": 162,
+                        "year": 2003
+                    }
+                ]
+            }
+        ],
+        "tracks": []
+    },
+    {
+        "artist_id": 2,
+        "name": "Григорий Лепс",
+        "albums": [
+            {
+                "album_id": 1,
+                "title": "Ты чего такой серьёзный",
+                "year": 2017,
+                "tracks": [
+                    {
+                        "track_id": 1,
+                        "title": "Аминь",
+                        "genre": "Rock",
+                        "duration": 242,
+                        "year": 2017
+                    },
+                    {
+                        "track_id": 2,
+                        "title": "Что ж ты натворила",
+                        "genre": "Rock",
+                        "duration": 215,
+                        "year": 2017
+                    }
+                ]
+            }
+        ],
+        "tracks": []
+    },
+    {
+        "artist_id": 3,
+        "name": "Любэ",
+        "albums": [],
+        "tracks": [
+            {
+                "track_id": 1,
+                "title": "Солдат",
+                "genre": "Русская эстрада",
+                "duration": 306,
+                "year": 2012
+            }
+        ]
+    }
+]

@@ -5,18 +5,17 @@ from Json.WriteReadJson import save_to_json, load_from_json
 
 
 def main():
-    artist1 = None
-    artist2 = None
-
     try:
-        loaded_data = load_from_json()
-        if loaded_data:
-            print("\nДанные из JSON:")
-            for artist in loaded_data:
-                print(f"- {artist['name']} ({len(artist['albums'])} альбомов)")
+        artists = load_from_json()
+        print("Артисты, загруженные из JSON:")
+        if not artists:
+            print("(Файл пуст или отсутствует)")
+        else:
+            for artist in artists:
+                print(f"- {artist.name} ({len(artist.albums)} альбомов), ({len(artist.tracks)} треков)")
 
-        artist1 = Artist( 'Григорий Лепс')
-        album1 = artist1.create_album(1,'Ты чего такой серьёзный', 2017)
+        artist1 = Artist(2, 'Григорий Лепс')
+        album1 = artist1.create_album(1, 'Ты чего такой серьёзный', 2017)
 
         track1 = artist1.create_track(1, 'Аминь', 'Rock', 242, 2017)
         track2 = artist1.create_track(2, 'Что ж ты натворила', 'Rock', 215, 2017)
@@ -34,18 +33,15 @@ def main():
         user1.show_playlists()
         playlist1.show_tracks()
 
-        artist2 = Artist(2, 'Любэ')
-        wrong_track = artist2.create_track(3, 'Солдат', 'Rock', 306, 2017)
-        album1.add_track(wrong_track)
+        artist2 = Artist(3, 'Любэ')
+        artist2.create_track(1, 'Солдат', 'Русская эстрада',306,2012)
+        artists.append(artist1)
+        artists.append(artist2)
 
-    except (CreateError, WrongArtist, TrackExists, Exception) as error:
-        print(f'\nОшибка: {error}')
+        save_to_json(artists)
 
-
-    finally:
-        artists_to_save = [a for a in (artist1, artist2) if a is not None]
-        if artists_to_save:
-            save_to_json(artists_to_save)
+    except (CreateError, WrongArtist, TrackExists) as error:
+        print(f'Ошибка: {error}')
 
 
 if __name__ == '__main__':
