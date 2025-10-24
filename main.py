@@ -15,11 +15,11 @@ def main():
             for artist in loaded_data:
                 print(f"- {artist['name']} ({len(artist['albums'])} альбомов)")
 
-        artist1 = Artist(1, 'Григорий Лепс')
-        album1 = artist1.create_album(1, 'Ты чего такой серьёзный', 2017)
+        artist1 = Artist( 'Григорий Лепс')
+        album1 = artist1.create_album(1,'Ты чего такой серьёзный', 2017)
 
-        track1 = artist1.create_track(1, 'Аминь', 'Rock', 242)
-        track2 = artist1.create_track(2, 'Что ж ты натворила', 'Rock', 215)
+        track1 = artist1.create_track(1, 'Аминь', 'Rock', 242, 2017)
+        track2 = artist1.create_track(2, 'Что ж ты натворила', 'Rock', 215, 2017)
 
         album1.add_track(track1)
         album1.add_track(track2)
@@ -35,11 +35,12 @@ def main():
         playlist1.show_tracks()
 
         artist2 = Artist(2, 'Любэ')
-        wrong_track = artist2.create_track(3, 'Солдат', 'Rock', 306)
+        wrong_track = artist2.create_track(3, 'Солдат', 'Rock', 306, 2017)
         album1.add_track(wrong_track)
 
-    except (CreateError, WrongArtist, TrackExists) as error:
+    except (CreateError, WrongArtist, TrackExists, Exception) as error:
         print(f'\nОшибка: {error}')
+
 
     finally:
         artists_to_save = [a for a in (artist1, artist2) if a is not None]

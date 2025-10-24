@@ -15,20 +15,28 @@ class Artist:
     def create_album(self, album_id: int, title: str, year: int):
         if not title:
             title = 'Без названия'
+        if not year:
+            year = 'Год выпуска альбома неизвестен'
         if year < 0:
-            raise CreateError('Год создания не может быть отрицательным')
+            raise CreateError('Год выпуска альбома не может быть отрицательным')
         album = Album(album_id, title, self, year)
         self.albums.append(album)
         return album
 
-    def create_track(self, track_id: int, title: str, genre: str, duration: int):
+    def create_track(self, track_id: int, title: str, genre: str, duration: int, year: int):
         if not title:
             title = 'Без названия'
         if not genre:
             genre = "Неизвестный жанр"
+        if not duration:
+            duration = "Длительность не распознана"
+        if not year:
+            year = 'Год выпуска трека неизвестен'
         if duration < 0:
-            raise CreateError('Длительность не может быть отрицательной')
-        track = Track(track_id, title, genre, duration, self)
+            raise CreateError('Длительность трека не может быть отрицательной')
+        if year < 0:
+            raise CreateError('Год выпуска трека не может быть отрицательным')
+        track = Track(track_id, title, genre, duration, year, self)
         self.tracks.append(track)
         return track
 

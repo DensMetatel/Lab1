@@ -1,5 +1,5 @@
 from Class.Playlist import Playlist
-
+from Class.Exceptions import CreateError
 
 class User:
     def __init__(self, user_id: int, username: str):
@@ -10,6 +10,8 @@ class User:
         self.playlists = []
 
     def create_playlist(self, playlist_id: int, name: str):
+        if not playlist_id:
+            raise CreateError('Нет ID плейлиста')
         if not name:
             name = 'Без названия'
         playlist = Playlist(playlist_id, name, self)

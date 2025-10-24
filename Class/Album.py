@@ -5,8 +5,12 @@ class Album:
     def __init__(self, album_id: int, title: str, artist, year: int):
         if not title:
             title = 'Без названия'
+        if not artist:
+            raise CreateError('Альбом никому не принадлежит')
+        if not year:
+            year = 'Год выпуска неизвестен'
         if year < 0:
-            raise CreateError('Год создания не может быть отрицательным')
+            raise CreateError('Год выпуска альбома не может быть отрицательным')
         self.album_id = album_id
         self.title = title
         self.artist = artist
@@ -15,7 +19,7 @@ class Album:
 
     def add_track(self, track):
         if track.artist != self.artist:
-            raise WrongArtist('Это трек другого артиста')
+            raise WrongArtist('Это альбом другого артиста')
         if track in self.tracks:
             raise TrackExists("Такой трек уже есть в альбоме")
         self.tracks.append(track)
