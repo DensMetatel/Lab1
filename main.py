@@ -1,3 +1,4 @@
+from Class.Album import Album
 from Class.Artist import Artist
 from Class.Track import Track
 from Class.User import User
@@ -17,3 +18,8 @@ playlist.show_tracks()
 
 user.show_playlists()
 
+artist1 = Artist(2, "Кунка")
+album = artist.create_album(1, "Мой альбом", 2019)
+track3 = artist1.create_track(3, "кункабожит", "Rock", 242)
+
+album.add_track(track3)

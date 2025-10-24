@@ -1,15 +1,22 @@
+from Class.Exceptions import CreateError, TrackExists
+
+
 class Playlist:
     def __init__(self, playlist_id: int, title: str, username):
+        if not title:
+            title = 'Без названия'
+        if not username:
+            username = 'Неизвестный'
         self.playlist_id = playlist_id
         self.title = title
         self.username = username
         self.tracks = []
 
     def add_track(self, track):
-        if track not in self.tracks:
-            self.tracks.append(track)
+        if track in self.tracks:
+            raise TrackExists("Такой трек уже есть в плейлисте")
         else:
-            print('Уже есть в плейлисте')
+            self.tracks.append(track)
 
     def remote_track(self, track):
         if track in self.tracks:

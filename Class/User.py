@@ -3,11 +3,15 @@ from Class.Playlist import Playlist
 
 class User:
     def __init__(self, user_id: int, username: str):
+        if not username:
+            username = 'Неизвестный'
         self.user_id = user_id
         self.username = username
         self.playlists = []
 
     def create_playlist(self, playlist_id: int, name: str):
+        if not name:
+            name = 'Без названия'
         playlist = Playlist(playlist_id, name, self)
         self.playlists.append(playlist)
         return playlist
