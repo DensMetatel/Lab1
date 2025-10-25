@@ -1,0 +1,68 @@
+<artists>
+    <artist id="1">
+        <name>Linkin Park</name>
+        <albums>
+            <album id="0" year="2003">
+                <title>Meteora</title>
+                <tracks>
+                    <track id="1">
+                        <title>Numb</title>
+                        <genre>Rock</genre>
+                        <duration>187</duration>
+                        <year>2003</year>
+                    </track>
+                    <track id="2">
+                        <title>Faint</title>
+                        <genre>Rock</genre>
+                        <duration>162</duration>
+                        <year>2003</year>
+                    </track>
+                </tracks>
+            </album>
+        </albums>
+        <tracks />
+    </artist>
+
+    <artist id="2">
+        <name>Григорий Лепс</name>
+        <albums>
+            <album id="1" year="2017">
+                <title>Ты чего такой серьёзный</title>
+                <tracks>
+                    <track id="1">
+                        <title>Аминь</title>
+                        <genre>Rock</genre>
+                        <duration>242</duration>
+                        <year>2017</year>
+                    </track>
+                    <track id="2">
+                        <title>Что ж ты натворила</title>
+                        <genre>Rock</genre>
+                        <duration>215</duration>
+                        <year>2017</year>
+                    </track>
+                    <track id="3">
+                        <title>Снега</title>
+                        <genre>Rock</genre>
+                        <duration>245</duration>
+                        <year>2017</year>
+                    </track>
+                </tracks>
+            </album>
+        </albums>
+        <tracks />
+    </artist>
+
+    <artist id="3">
+        <name>Любэ</name>
+        <albums />
+        <tracks>
+            <track id="1">
+                <title>Солдат</title>
+                <genre>Русская эстрада</genre>
+                <duration>306</duration>
+                <year>2012</year>
+            </track>
+        </tracks>
+    </artist>
+</artists>
